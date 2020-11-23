@@ -1,0 +1,29 @@
+{
+	"name": "Darkmode.js",
+	"version": "1.0.0",
+	"manifest_version": 2,
+	"description": "🌓 Add a dark-mode / night-mode to your website in a few seconds",
+	"background": {
+		"scripts": ["background.js"],
+		"default_icon": "icon.png"
+  },
+	"browser_action": {
+		"default_icon": "icon.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
+			"js": [
+				"darkmode-js.min.js",
+				"content_scripts.js"
+			]
+		}
+	],
+	"permissions": [
+		"tabs",
+		"activeTab"
+	]
+}
